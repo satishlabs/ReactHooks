@@ -1,7 +1,7 @@
 const steps = [
   {
     title: "dispatch",
-    text: "A button calls dispatch with an action, such as { type: \"UPDATE_NAME\", payload: \"Satish Prasad\" }.",
+    text: "A button calls dispatch with an action, such as { type: \"UPDATE_CNAME\", payload: \"Mastering React\" }.",
   },
   {
     title: "reducer",
@@ -19,15 +19,16 @@ const steps = [
 
 const LearnPanel = () => {
   return (
-    <section className="lesson" aria-label="How context and reducer work together">
-      <p className="card-kicker">How to follow a click</p>
+        <section className="flow" aria-label="How context and reducer work together">
+      <p className="kicker">How a click moves</p>
       <ol>
         {steps.map((step, index) => (
           <li key={step.title}>
-            <strong>
-              {index + 1}. {step.title}
-            </strong>
-            <span>{step.text}</span>
+            <span className="step-no">{String(index + 1).padStart(2, "0")}</span>
+            <div>
+              <strong>{step.title}</strong>
+              <span>{step.text}</span>
+            </div>
           </li>
         ))}
       </ol>

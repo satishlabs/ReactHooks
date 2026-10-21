@@ -41,44 +41,70 @@ const CourseComponent = (props) => {
         });
     }
     
+    const formattedPrice = `₹${Number(price).toLocaleString("en-IN")}`;
+
     return (
-        <div className="container">
-            <br/>
-            <b><u>Course Details</u></b>
-            <br/>
-            <table className='table'>
-                <tbody>
-                    <tr>
-                        <td> CourseId: {courseId}</td>
-                    </tr>
-                    <tr>
-    
-                        <td>Course Name :{courseName}</td>
-                        <td>
-                            <button onClick={updateCourseName.bind(this, "Mastering React")} className="btn btn-success">Update Course Name</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Price : {price}</td>
-                        <td>
-                            <button onClick={updatePrice.bind(this, 100)} className="btn btn-success">Update Price</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Duration : {duration}</td>
-                        <td>
-                            <button onClick={updateDuration.bind(this, "8 weeks")} className="btn btn-success">Update Duration</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Trainer : {trainer}</td>
-                        <td>
-                            <button onClick={updateTrainer.bind(this, "Srinivas Dande")} className="btn btn-success">Update Trainer</button>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+        <article className="record">
+            <header className="record-top">
+                <div>
+                    <p className="kicker">Course record</p>
+                    <h2>{courseName}</h2>
+                </div>
+                <span className="record-id">{courseId}</span>
+            </header>
+            <dl className="metrics">
+                <div>
+                    <dt>Price</dt>
+                    <dd>{formattedPrice}</dd>
+                </div>
+                <div>
+                    <dt>Duration</dt>
+                    <dd>{duration}</dd>
+                </div>
+                <div>
+                    <dt>Trainer</dt>
+                    <dd>{trainer}</dd>
+                </div>
+            </dl>
+            <ul className="actions">
+                <li>
+                    <div>
+                        <span>Course name</span>
+                        <strong>{courseName}</strong>
+                    </div>
+                    <button type="button" onClick={updateCourseName.bind(this, "Mastering React")}>
+                        Set Mastering React
+                    </button>
+                </li>
+                <li>
+                    <div>
+                        <span>Price</span>
+                        <strong>{formattedPrice}</strong>
+                    </div>
+                    <button type="button" onClick={updatePrice.bind(this, 100)}>
+                        Set ₹100
+                    </button>
+                </li>
+                <li>
+                    <div>
+                        <span>Duration</span>
+                        <strong>{duration}</strong>
+                    </div>
+                    <button type="button" onClick={updateDuration.bind(this, "8 weeks")}>
+                        Set 8 weeks
+                    </button>
+                </li>
+                <li>
+                    <div>
+                        <span>Trainer</span>
+                        <strong>{trainer}</strong>
+                    </div>
+                    <button type="button" onClick={updateTrainer.bind(this, "Srinivas Dande")}>
+                        Set Srinivas Dande
+                    </button>
+                </li>
+            </ul>
+        </article>
     );
 }
 export default CourseComponent;

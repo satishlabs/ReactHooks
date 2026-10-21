@@ -11,8 +11,12 @@ function App() {
       <MyCourseProvider>
         <section id="center">
           <header className="page-header">
-            <p className="eyebrow">React Hooks</p>
-            <h1>Context + Reducer</h1>
+            <p className="eyebrow">React lab</p>
+            <h1>Context and reducer</h1>
+            <p className="lede">
+              One course record. Each button dispatches an action, and the
+              page reads the result from context.
+            </p>
           </header>
           <LearnPanel />
           <div className="cards">
