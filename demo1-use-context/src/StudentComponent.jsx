@@ -1,41 +1,19 @@
 import { useContext } from "react";
 import { StudentContext } from "./studentContext";
 
-const StudentComponent = () => {
-  // 4. Read the nearest StudentContext.Provider value. No student props are required.
+function StudentComponent() {
   const { studentInfo, updateStudentName } = useContext(StudentContext);
-  const { studentId, studentName, email, phone } = studentInfo;
 
   return (
-    <article className="card card-student">
-      <header className="card-header">
-        <div className="card-mark" aria-hidden="true">
-          {studentName.charAt(0)}
-        </div>
-        <div>
-          <p className="card-kicker">Student</p>
-          <h2>{studentName}</h2>
-        </div>
-      </header>
-      <dl className="card-details">
-        <div>
-          <dt>Id</dt>
-          <dd>{studentId}</dd>
-        </div>
-        <div>
-          <dt>Email</dt>
-          <dd>{email}</dd>
-        </div>
-        <div>
-          <dt>Phone</dt>
-          <dd>{phone}</dd>
-        </div>
-      </dl>
-      <button className="card-action" type="button" onClick={updateStudentName}>
-        Update Name
-      </button>
+    <article className="card" aria-labelledby="student-heading">
+      <h2 id="student-heading">Student information</h2>
+      <p><span>Student ID</span><strong>{studentInfo.studentId}</strong></p>
+      <p><span>Name</span><strong>{studentInfo.studentName}</strong></p>
+      <p><span>Email</span><strong>{studentInfo.email}</strong></p>
+      <p><span>Phone</span><strong>{studentInfo.phone}</strong></p>
+      <button type="button" onClick={updateStudentName}>Change student name</button>
     </article>
   );
-};
+}
 
 export default StudentComponent;

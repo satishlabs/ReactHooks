@@ -1,41 +1,19 @@
 import { useContext } from "react";
 import { CourseContext } from "./courseContext";
 
-const CourseComponent = () => {
-  // 4. Read the nearest CourseContext.Provider value. No course props are required.
-  const { courseInfo, updateCourseCost } = useContext(CourseContext);
-  const { courseId, courseName, cost, trainer } = courseInfo;
+function CourseComponent() {
+    const { courseInfo, updateCourseCost } = useContext(CourseContext);
 
-  return (
-    <article className="card card-course">
-      <header className="card-header">
-        <div className="card-mark" aria-hidden="true">
-          {courseName.charAt(0)}
-        </div>
-        <div>
-          <p className="card-kicker">Course</p>
-          <h2>{courseName}</h2>
-        </div>
-      </header>
-      <dl className="card-details">
-        <div>
-          <dt>Id</dt>
-          <dd>{courseId}</dd>
-        </div>
-        <div>
-          <dt>Cost</dt>
-          <dd>₹{cost.toLocaleString("en-IN")}</dd>
-        </div>
-        <div>
-          <dt>Trainer</dt>
-          <dd>{trainer}</dd>
-        </div>
-      </dl>
-      <button className="card-action" type="button" onClick={updateCourseCost}>
-        Update Cost
-      </button>
-    </article>
-  );
-};
+    return (
+        <article className="card" aria-labelledby="course-heading">
+            <h2 id="course-heading">Course information</h2>
+            <p><span>Course ID</span><strong>{courseInfo.courseId}</strong></p>
+            <p><span>Course</span><strong>{courseInfo.courseName}</strong></p>
+            <p><span>Cost</span><strong>{courseInfo.cost.toLocaleString()}</strong></p>
+            <p><span>Trainer</span><strong>{courseInfo.trainer}</strong></p>
+            <button type="button" onClick={updateCourseCost}>Change course cost</button>
+        </article>
+    );
+}
 
 export default CourseComponent;
