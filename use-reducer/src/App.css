@@ -1,0 +1,133 @@
+.page {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 48px 24px 80px;
+}
+
+.page-header {
+  max-width: 34rem;
+  margin-bottom: 28px;
+}
+
+.eyebrow,
+.kicker {
+  margin: 0 0 8px;
+  color: #8a5a2b;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+h1 {
+  margin: 0;
+  font-size: 2.6rem;
+  font-weight: 650;
+  letter-spacing: -0.045em;
+  line-height: 1.05;
+}
+
+.lede {
+  margin: 12px 0 0;
+  color: #5c6573;
+  font-size: 1.02rem;
+}
+
+.panel,
+.counter {
+  border: 1px solid #e6e1d8;
+  border-radius: 18px;
+  background: #fff;
+}
+
+.panel {
+  margin-bottom: 16px;
+  padding: 20px 22px 8px;
+}
+
+.panel ul {
+  margin: 12px 0 8px;
+  padding: 0;
+  list-style: none;
+}
+
+.panel li {
+  display: grid;
+  gap: 4px;
+  padding: 12px 0;
+  border-top: 1px solid #efeae2;
+}
+
+.panel span {
+  color: #5c6573;
+}
+
+code {
+  width: fit-content;
+  padding: 2px 7px;
+  border-radius: 6px;
+  background: #f6f1ea;
+  color: #3b2a1a;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.82rem;
+}
+
+.counter {
+  padding: 28px 24px 24px;
+  text-align: center;
+}
+
+.count {
+  margin: 0;
+  font-size: 4.5rem;
+  font-weight: 650;
+  letter-spacing: -0.06em;
+  line-height: 1;
+}
+
+.counter-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 28px;
+}
+
+.counter button {
+  border: 1px solid #d9d3c8;
+  border-radius: 999px;
+  padding: 10px 16px;
+  background: #fff;
+  color: #1d2430;
+  font-weight: 650;
+  cursor: pointer;
+}
+
+.counter button.primary {
+  border-color: #1d2430;
+  background: #1d2430;
+  color: #fff;
+}
+
+.counter button.quiet {
+  color: #5c6573;
+}
+
+.counter button:hover {
+  border-color: #1d2430;
+}
+
+.counter button:focus-visible {
+  outline: 3px solid #e6d3bc;
+  outline-offset: 2px;
+}
+
+@media (max-width: 560px) {
+  h1 {
+    font-size: 2.1rem;
+  }
+
+  .counter-actions {
+    flex-direction: column;
+  }
+}
